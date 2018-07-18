@@ -443,6 +443,9 @@ DISABLE_TESTS="suspscan hidden_procs deleted_files packet_cap_apps apps"
 # for each new file, and rkhunter will report this.
 #
 #EXISTWHITELIST=""
+<% node['rkhunter']['existwhitelist'].each do |item| %>
+EXISTWHITELIST=<%= item %>
+<% end %>
 
 #
 # Whitelist various attributes of the specified files.
