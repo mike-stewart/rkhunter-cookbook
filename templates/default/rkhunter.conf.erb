@@ -612,6 +612,9 @@ PHALANX2_DIRTEST=0
 #
 #ALLOWDEVFILE="/dev/shm/pulse-shm-*"
 #ALLOWDEVFILE="/dev/shm/sem.ADBE_*"
+<% node['rkhunter']['allowdevfile'].each do |item| %>
+ALLOWDEVFILE=<%= item %>
+<% end %>
 
 #
 # This setting tells rkhunter where the inetd configuration
