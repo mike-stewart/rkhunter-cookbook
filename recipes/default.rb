@@ -32,4 +32,11 @@ template '/etc/rkhunter.conf' do
   owner 'root'
   group 0
   mode 00644
+  notifies :run, 'execute[propupd]', :delayed
 end
+
+execute 'propupd' do
+  command "/usr/bin/rkhunter --propupd"
+  action :nothing
+end
+
